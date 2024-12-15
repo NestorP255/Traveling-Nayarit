@@ -1,0 +1,221 @@
+
+.destinosSeccionLugares{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .destinosSeccionLugares .right{
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .destinosSeccionLugares .left{
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .destinosSeccionLugares .imageReserva1{
+    width: 600px;
+    height: 350px;
+    margin: 50px auto;
+    background: url('../assets/imagenes/EMPRESAS_HOTELES.png');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    box-shadow: 0px 0px 20px #8a8a8a;
+  }
+  .destinosSeccionLugares .imageReserva2{
+    width: 600px;
+    height: 350px;
+    margin: 50px auto;
+    background: url('../assets/imagenes/VUELOS.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    box-shadow: 0px 0px 20px #8a8a8a;
+  }
+  
+  .destinosSeccionLugares .imageReserva3{
+    width: 600px;
+    height: 350px;
+    margin: 50px auto;
+    background: url('../assets/imagenes/transporte.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    box-shadow: 0px 0px 20px #8a8a8a;
+  }
+  .destinosSeccionLugares .imageReserva4{
+    width: 600px;
+    height: 350px;
+    margin: 50px auto;
+    background: url('../assets/imagenes/CULTURA.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    box-shadow: 0px 0px 20px #8a8a8a;
+  }
+  .destinosSeccionLugares .imageReserva5{
+    width: 600px;
+    height: 350px;
+    margin: 50px auto;
+    background: url('../assets/imagenes/AVENTURAS.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    box-shadow: 0px 0px 20px #8a8a8a;
+  }
+  .destinosSeccionLugares h1{
+    text-align: center;
+    font-size: 35px;
+    text-decoration: underline;
+    margin: 75px auto 0px;
+  }
+  
+  .destinosSeccionLugares p{
+    font-size: 20px;
+    text-align: justify;
+    padding: 0px 50px;
+  }
+  .destinosSeccionLugares a{
+    color: white;
+    background-color: #e27435;
+    padding: 15px 40px;
+    font-size: 19px;
+  }
+  .destinosSeccionLugares .btn{
+    position: relative;
+    margin: 0 auto;
+  }
+
+ /* Estilos para el carrito y el cuadro de diálogo */
+.dialogo-reservacion {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 1001;
+  border-radius: 8px;
+}
+
+.dialogo-reservacion h3 {
+  margin-top: 0;
+}
+
+ #carrito {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  width: 300px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  border-radius: 8px 0 0 8px;
+  display: block;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+#carrito h3, #carrito p, #carrito button, #carrito select, #carrito input[type="date"] {
+  display: none;
+}
+#carrito.expandido h3, #carrito.expandido p, #carrito.expandido button, #carrito.expandido select, #carrito.expandido input[type="date"], #carrito.expandido ul {
+  display: block;
+}
+#carrito.expandido {
+  transform: translateX(0);
+}
+#carrito.minimizado {
+  transform: translateX(270px);
+}
+#expandirCarritoBtn, #minimizarCarritoBtn {
+  display: inline;
+}
+.dialogo-hotelera, .dialogo-aerolinea, .dialogo-reservacion {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 1001;
+  border-radius: 8px;
+  width: 40%;
+}
+.dialogo-hotelera select, .dialogo-aerolinea select, .dialogo-reservacion select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.dialogo-hotelera button, .dialogo-aerolinea button, .dialogo-reservacion button {
+  padding: 10px;
+}
+#paquetesAgregados {
+  list-style-type: none;
+  padding: 0;
+}
+#paquetesAgregados li {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 4px;
+}
+.remove-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.button-reservacion {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button-reservacion:hover {
+  background-color: #45a049;
+}
+
+.minimizar-reservacion {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
