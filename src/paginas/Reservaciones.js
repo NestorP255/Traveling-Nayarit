@@ -9,35 +9,48 @@ function Reservaciones() {
   const [dialogoReservacion, setDialogoReservacion] = useState(false);
   const [lugar, setLugar] = useState('');
   const [fechaViaje, setFechaViaje] = useState('');
+  const [carritoExpandido, setCarritoExpandido] = useState(false);
+  
+  const [showDialogoHotelera, setShowDialogoHotelera] = useState(false);
+  const [showDialogoAerolinea, setShowDialogoAerolinea] = useState(false);
 
   const toggleForm = () => setFormVisible(!formVisible);
 
-  const handleHoteleraSelect = (e) => setHoteleraSeleccionada(e.target.value);
-  const handleAerolineaSelect = (e) => setAerolineaSeleccionada(e.target.value);
+  const handleHoteleraSelect = (e) => {
+    setHoteleraSeleccionada(e.target.value);
+    setShowDialogoHotelera(false);  // Cerrar el diálogo de hotelera
+    setCarritoExpandido(true);  // Expandir el carrito al seleccionar una hotelera
+  };
+
+  const handleAerolineaSelect = (e) => { 
+    setAerolineaSeleccionada(e.target.value);
+    setShowDialogoAerolinea(false);  // Cerrar el diálogo de aerolínea
+    setCarritoExpandido(true);  // Expandir el carrito al seleccionar una aerolínea
+  };
+
+  const handleAceptarHotelera = () => {
+    setShowDialogoHotelera(false);  // Cerrar el diálogo de hotelera
+  };
+
+  const handleAceptarAerolinea = () => {
+    setShowDialogoAerolinea(false);  // Cerrar el diálogo de aerolínea
+  };
 
   const agregarPaquete = (paquete) => {
     setPaquetesAgregados([...paquetesAgregados, paquete]);
+    setCarritoExpandido(true);  // Expandir el carrito al agregar un paquete
   };
 
   const handleReservar = () => {
-    if (lugar && fechaViaje) {
-      const detallesReservacion = `
-        Lugar: ${lugar}<br>
-        Fecha: ${fechaViaje}<br>
-        Hotelera: ${hoteleraSeleccionada}<br>
-        Aerolínea: ${aerolineaSeleccionada}<br>
-        Paquetes: ${paquetesAgregados.join(', ')}
-      `;
-      setDialogoReservacion(detallesReservacion);
+    if (!lugar || !fechaViaje) {
+      alert('Debe completar todos los campos.');
     } else {
-      alert('Debe seleccionar una fecha y un lugar antes de realizar la reservación.');
+      alert('Reservación realizada con éxito');
     }
   };
 
   return (
     <div style={{ position: 'relative' }}>
-      
-
       <section className="topSeccion">
         <div className="topImage"></div>
         <div className="logoTop"></div>
@@ -69,7 +82,7 @@ function Reservaciones() {
           <p>Disfruta de un descuento de hasta 3% usando el código NAYARIT en el checkout del sitio que escojas.</p>
           <p>(Aplican TyC)</p>
           <div className="btn">
-            <button onClick={() => document.getElementById('dialogoHotelera').style.display = 'block'}>ESCOGER HOTELERA</button>
+            <button onClick={() => setShowDialogoHotelera(true)}>ESCOGER HOTELERA</button>
           </div>
         </div>
         <div className="left">
@@ -87,7 +100,7 @@ function Reservaciones() {
           <p>Revisa la disponibilidad de vuelos por medio de nuestro catálogo. ¡Puedes comparar los detalles desde un solo lugar!</p>
           <p>Cuando hayas escogido tu aerolínea deseada, escoge la opción en el menú.​</p>
           <div className="btn">
-            <button onClick={() => document.getElementById('dialogoAerolinea').style.display = 'block'}>ESCOGER AEROLINEA</button>
+            <button onClick={() => setShowDialogoAerolinea(true)}>ESCOGER AEROLINEA</button>
           </div>
         </div>
       </section>
@@ -136,35 +149,92 @@ function Reservaciones() {
         </div>
       </section>
 
-      <div id="carrito" className="minimizado">
+      <div id="carrito" className={carritoExpandido ? 'expandido' : 'minimizado'}>
         <br />
-        <button id="minimizarCarritoBtn" style={{ display: 'none' }}>Minimizar</button>
-        <button id="expandirCarritoBtn">Expandir</button>
-        <h3>Plan de Viajes</h3>
-        <label htmlFor="lugarSelect">Lugar:</label>
-        <select id="lugarSelect" value={lugar} onChange={(e) => setLugar(e.target.value)}>
-          <option value="">Seleccionar</option>
-          <option value="Sayulita">Sayulita</option>
-          <option value="San Blas">San Blas</option>
-          <option value="Tepic">Tepic</option>
-          <option value="Guayabitos">Guayabitos</option>
-          <option value="Mexcaltitán">Mexcaltitán</option>
-          <option value="Punta Mita">Punta Mita</option>
-        </select>
-        <label htmlFor="fechaViaje">Fecha de Viaje:</label>
-        <input type="date" id="fechaViaje" value={fechaViaje} onChange={(e) => setFechaViaje(e.target.value)} />
-        <p id="hoteleraSeleccionada">Ninguna hotelera seleccionada</p>
-        <p id="aerolineaSeleccionada">Ninguna aerolínea seleccionada</p>
-        <h4>Paquetes Agregados:</h4>
-        <ul id="paquetesAgregados">
-          {paquetesAgregados.map((paquete, index) => (
-            <li key={index}>
-              {paquete} <button onClick={() => setPaquetesAgregados(paquetesAgregados.filter((_, i) => i !== index))}>X</button>
-            </li>
-          ))}
-        </ul>
-        <button id="reservarBtn" onClick={handleReservar}>REALIZAR RESERVACIÓN</button>
+        <button
+          id="minimizarCarritoBtn"
+          style={{ display: carritoExpandido ? 'inline-block' : 'none' }}
+          onClick={() => setCarritoExpandido(false)}
+        >
+          Minimizar
+        </button>
+        <button
+          id="expandirCarritoBtn"
+          style={{ display: carritoExpandido ? 'none' : 'inline-block' }}
+          onClick={() => setCarritoExpandido(true)}
+        >
+          Expandir
+        </button>
+
+        {carritoExpandido && (
+          <>
+            <h3>Plan de Viajes</h3>
+            <label htmlFor="lugarSelect">Lugar:</label>
+            <select id="lugarSelect" value={lugar} onChange={(e) => setLugar(e.target.value)}>
+              <option value="">Seleccionar</option>
+              <option value="Sayulita">Sayulita</option>
+              <option value="San Blas">San Blas</option>
+              <option value="Tepic">Tepic</option>
+              <option value="Guayabitos">Guayabitos</option>
+              <option value="Mexcaltitán">Mexcaltitán</option>
+              <option value="Punta Mita">Punta Mita</option>
+            </select>
+
+            <label htmlFor="fechaViaje">Fecha de Viaje:</label>
+            <input type="date" id="fechaViaje" value={fechaViaje} onChange={(e) => setFechaViaje(e.target.value)} />
+
+            <p id="hoteleraSeleccionada">
+              {hoteleraSeleccionada || 'Ninguna hotelera seleccionada'}
+            </p>
+
+            <p id="aerolineaSeleccionada">
+              {aerolineaSeleccionada || 'Ninguna aerolínea seleccionada'}
+            </p>
+
+            <h4>Paquetes Agregados:</h4>
+            <ul id="paquetesAgregados">
+              {paquetesAgregados.map((paquete, index) => (
+                <li key={index}>
+                  {paquete} 
+                  <button
+                    onClick={() => setPaquetesAgregados(paquetesAgregados.filter((_, i) => i !== index))}
+                  >
+                    X
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <button id="reservarBtn" onClick={handleReservar}>REALIZAR RESERVACIÓN</button>
+          </>
+        )}
       </div>
+
+      {/* Cuadro de diálogo de Hotelera */}
+      {showDialogoHotelera && (
+        <div id="dialogoHotelera" className="dialogo-hotelera">
+          <h3>Escoge una Hotelera</h3>
+          <select id="hoteleraSelect" value={hoteleraSeleccionada} onChange={handleHoteleraSelect}>
+            <option value="TRIVAGO">TRIVAGO</option>
+            <option value="EXPEDIA">EXPEDIA</option>
+            <option value="BOOKING">BOOKING</option>
+          </select>
+          <button onClick={handleAceptarHotelera}>Aceptar</button>
+        </div>
+      )}
+
+      {/* Cuadro de diálogo de Aerolínea */}
+      {showDialogoAerolinea && (
+        <div id="dialogoAerolinea" className="dialogo-aerolinea">
+          <h3>Escoge una Aerolínea</h3>
+          <select id="aerolineaSelect" value={aerolineaSeleccionada} onChange={handleAerolineaSelect}>
+            <option value="AEROMAR">AEROMAR</option>
+            <option value="AEROMEXICO">AEROMEXICO</option>
+            <option value="VIVA AEROBUS">VIVA AEROBUS</option>
+            <option value="VOLARIS">VOLARIS</option>
+          </select>
+          <button onClick={handleAceptarAerolinea}>Aceptar</button>
+        </div>
+      )}
 
       {dialogoReservacion && (
         <div id="dialogoReservacion" className="dialogo-reservacion">
@@ -174,27 +244,6 @@ function Reservaciones() {
           <button id="confirmarReservacionBtn" className="button-reservacion" onClick={() => window.location.href = 'PaginaPrincipal.php'}>Aceptar</button>
         </div>
       )}
-
-      <div id="dialogoHotelera" className="dialogo-hotelera" style={{ display: 'none' }}>
-        <h3>Escoge una Hotelera</h3>
-        <select id="hoteleraSelect" value={hoteleraSeleccionada} onChange={handleHoteleraSelect}>
-          <option value="TRIVAGO">TRIVAGO</option>
-          <option value="EXPEDIA">EXPEDIA</option>
-          <option value="BOOKING">BOOKING</option>
-        </select>
-        <button id="aceptarHoteleraBtn" onClick={() => setDialogoReservacion(false)}>Aceptar</button>
-      </div>
-
-      <div id="dialogoAerolinea" className="dialogo-aerolinea" style={{ display: 'none' }}>
-        <h3>Escoge una Aerolínea</h3>
-        <select id="aerolineaSelect" value={aerolineaSeleccionada} onChange={handleAerolineaSelect}>
-          <option value="AEROMAR">AEROMAR</option>
-          <option value="AEROMEXICO">AEROMEXICO</option>
-          <option value="VIVA AEROBUS">VIVA AEROBUS</option>
-          <option value="VOLARIS">VOLARIS</option>
-        </select>
-        <button id="aceptarAerolineaBtn" onClick={() => setDialogoReservacion(false)}>Aceptar</button>
-      </div>
     </div>
   );
 }

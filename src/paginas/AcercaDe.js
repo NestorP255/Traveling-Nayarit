@@ -1,5 +1,6 @@
 import React from 'react';
 import '../CSS/estilo.css'; 
+import Footer from '../components/Footer';
 
 function AcercaDe() {
   return (
@@ -35,7 +36,7 @@ function AcercaDe() {
             </p>
             <br />
             <p style={{ color: 'black' }}>📧: TravNayarit@gmail.com</p>
-            <p style={{ color: 'black' }}>📱: +52 311 232 32 23</p>
+            <p style={{ color: 'black' }}>📱: +52 311 190 23 55</p>
             <br />
             <br />
             <br />
@@ -44,16 +45,15 @@ function AcercaDe() {
       </section>
 
       <section>
-        <h1 style={{ color: 'aliceblue', textAlign: 'center' }}>Desarrolladores 💻</h1>
+        <h1 style={{ color: '#036684', textAlign: 'center' }}>Desarrolladores 💻</h1>
         <div className="outfit-container">
           <div className="outfit">
-            <img src="imagenes/integrantes/paola.jpg" alt="Paola Alatorre" />
-            <h2>Paola Alatorre</h2>
+            <h2>Aaron Camacho</h2>
             <p>.</p>
           </div>
 
           <div className="outfit">
-            <h2>Ana González</h2>
+            <h2>Juan González</h2>
             <p>.</p>
           </div>
 
@@ -63,24 +63,17 @@ function AcercaDe() {
           </div>
 
           <div className="outfit">
-            <h2>Raúl Fletes</h2>
+            <h2>Nestor Ceja</h2>
             <p>.</p>
           </div>
 
-          <div className="outfit">
-            <h2>Doris Quezada</h2>
-            <p>.</p>
-          </div>
+          
         </div>
       </section>
 
-      <footer className="parteAbajo">
-        <h2>
-          Copyright © EQUIPO TILINES - All Rights Reserved | 2024 Agencia Viajes 'Traveltilin Agency'.
-        </h2>
-      </footer>
+    <Footer/>
     </div>
   );
 }
-
-export default AcercaDe;
+ 
+export default AcercaDe;
