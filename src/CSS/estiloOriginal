@@ -1,44 +1,3 @@
-/*.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/
-
-
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 *{
@@ -97,7 +56,7 @@ body {
 
 .seccion1{
   position: relative;
-  background: url('../src/assets/imagenes/fondo.jpg') no-repeat fixed center;
+  background: url('../assets/imagenes/fondo.jpg') no-repeat fixed center;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -479,7 +438,7 @@ a{
 
 .topImage{
   position: relative;
-  background: url('../src/assets/imagenes/background.jpg');
+  background: url('../assets/imagenes/background.jpg');
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -491,7 +450,7 @@ a{
 
 .logoTop{
   position: relative;
-  background: url('../src/assets/imagenes/favicon2.png');
+  background: url('../assets/imagenes/favicon2.png');
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -573,7 +532,7 @@ a{
   width: 600px;
   height: 350px;
   margin: 50px auto;
-  background: url(https://topadventure.com/__export/1631640069862/sites/laverdad/img/2021/09/14/san_blasx_nay.jpg_547047695.jpg);
+  background: url(https://arquitecturaviva.com/assets/uploads/obras/56840/av_medium__av_273685.webp?h=8f54636a);
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -650,7 +609,7 @@ a{
 /*-----------------------------------------*/
 .seccion1Sayulita{
   position: relative;
-  background: url('../src/assets/destinos/imagenes/sayulita/sayulita.jpg') no-repeat fixed center;
+  background: url('../assets/destinos/imagenes/sayulita/sayulita.jpg') no-repeat fixed center;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -678,7 +637,7 @@ a{
 }
 .seccion1SanBlas{
   position: relative;
-  background: url('../src/assets/destinos/imagenes/sanblas/sanblas.jpg') no-repeat fixed center;
+  background: url('../assets/destinos/imagenes/sanblas/sanblas.jpg') no-repeat fixed center;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -706,7 +665,7 @@ a{
 }
 .seccion1Tepic{
   position: relative;
-  background: url('../src/assets/destinos/imagenes/Tepic/tepic.jpg') no-repeat fixed center;
+  background: url('../assets/destinos/imagenes/Tepic/tepic.jpg') no-repeat fixed center;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -734,7 +693,7 @@ a{
 }
 .seccion1Guayabitos{
   position: relative;
-  background: url('../src/assets/destinos/imagenes/RinconGuayabitos/guayabitos.jpg') no-repeat fixed center;
+  background: url('../assets/destinos/imagenes/RinconGuayabitos/guayabitos.jpg') no-repeat fixed center;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -762,7 +721,7 @@ a{
 }
 .seccion1Mexcal{
   position: relative;
-  background: url('../src/assets/destinos/imagenes/mexcaltitan/mexcaltitan.jpg') no-repeat fixed center;
+  background: url('../assets/destinos/imagenes/mexcaltitan/mexcaltitan.jpg') no-repeat fixed center;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -790,7 +749,7 @@ a{
 }
 .seccion1PuntaMita{
   position: relative;
-  background: url('../src/assets/destinos/imagenes/PuntaMita/punta-de-mita.jpg') no-repeat fixed center;
+  background: url('../assets/destinos/imagenes/PuntaMita/punta-de-mita.jpg') no-repeat fixed center;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -873,7 +832,7 @@ figure {
 
 .separadorD{
   
-  background-image: url('../src/assets/destinos/imagenes/separador.jpg');
+  background-image: url('../assets/destinos/imagenes/separador.jpg');
   background-size: contain;
   background-position: center;
   padding: 30px;
@@ -989,11 +948,12 @@ figure {
   margin: 0px;
   padding: 0px;
 }
-.seccion2Destinos h1{
-  font-size: 50px;
+.seccion2Destinos h1 {
   text-align: center;
-  margin-bottom: 0px;
+  font-size: 50px;
+  margin-bottom: 0;
 }
+
 
 :root {
   --primary: #cc3f65;
@@ -1295,4 +1255,3 @@ form .btn button{
 form .btn button:hover{
   background: #ff8d4b;
 }
-

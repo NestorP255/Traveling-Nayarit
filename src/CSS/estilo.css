@@ -54,6 +54,8 @@ body {
   margin: 0px;
 }
 
+
+
 .seccion1{
   position: relative;
   background: url('../assets/imagenes/fondo.jpg') no-repeat fixed center;
@@ -121,164 +123,190 @@ a{
   position: relative;
   top: 72%;
 }
-.seccion2{
+.seccion2 {
   position: relative;
   width: 100%;
   height: 400px;
   display: grid;
   background-color: rgb(230, 230, 230);
+  padding: 20px; /* Agregado para mejorar el espacio interno */
 }
 
 .seccion2 .textLeft {
   text-align: center;
-  padding: 50px 160px 10px;
+  padding: 50px 5vw 10px; /* Adjust padding for responsive behavior */
   grid-column: 1;
   grid-row: 1;
   font-weight: lighter;
   font-size: 17px;
+  max-width: 600px; /* Limitar el ancho de la sección de texto */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
 }
+
 .seccion2 .textLeft a {
   background-color: rgb(3, 102, 132);
-  padding: 15px 40px;
+  padding: 15px 4vw; /* Cambiado a tamaño responsivo */
   color: whitesmoke;
   font-size: 19px;
   margin-top: 50px;
-  &:hover{
+  display: inline-block; /* Asegura el bloque de elementos */
+  text-align: center;
+  width: auto; /* Asegura que no se reduzca el contenido */
+  &:hover {
     background-color: rgb(7, 159, 205);
-    transition: background-color 0.2s ease-in-out;     
+    transition: background-color 0.2s ease-in-out;
   }
 }
-.seccion2 .cardsRight{
+
+.seccion2 .cardsRight {
   grid-column: 2;
   grid-row: 1;
   display: grid;
-  padding-right: 50px;
-  
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columna flexible y responsiva */
+  gap: 10px; /* Espacio entre las columnas */
 }
 
-.seccion2 .cardsRight .izq{
-  grid-column: 1;
-  grid-row: 1;
-  padding: 10px 10px;
+.seccion2 .cardsRight .izq, 
+.seccion2 .cardsRight .centro, 
+.seccion2 .cardsRight .der {
+  padding: 10px;
   display: grid;
-  row-gap: 0;
-  &:hover{
-    box-shadow: 0px 0px 10px 5px #00000015 ;
-    transition: box-shadow 0.5s ease-in-out;
-    &>h4,&>h3,&>div{
-      transform: scale(1.1);
-      transition: transform 0.2s ease-in-out;
-    }
-  }
-  
-}
-.seccion2 .cardsRight .centro{
-  grid-column: 2;
-  grid-row: 1;
-  padding: 10px 10px;
-  display: grid;
-  row-gap: 0;
-  &:hover{
-    box-shadow: 0px 0px 10px 5px #00000015 ;
-    transition: box-shadow 0.5s ease-in-out;
-    &>h4,&>h3,&>div{
-      transform: scale(1.1);
-      transition: transform 0.2s ease-in-out;
-    }
-  }
-}
-.seccion2 .cardsRight .der{
-  grid-column: 3;
-  grid-row: 1;
-  padding: 10px 10px;
-  display: grid;
-  row-gap: 0;
-  &:hover{
-    box-shadow: 0px 0px 10px 5px #00000015 ;
-    transition: box-shadow 0.5s ease-in-out;
-    &>h4,&>h3,&>div{
-      transform: scale(1.1);
-      transition: transform 0.2s ease-in-out;
-    }
-  }
-}
-.seccion2 .cardsRight * img{
-  width: 110px;
-  padding: 15px 10px; 
+  gap: 10px; /* Ajustado el padding y gap para las columnas */
+  text-align: center;
+  align-items: center; /* Centrar verticalmente los contenidos */
 }
 
-.seccion2 .cardsRight * h3{
-  text-align: center;
-  padding: 0px 5px;
-  margin: 0;
+.seccion2 .cardsRight img {
+  width: 100%; /* Imagen responsiva al 100% del contenedor */
+  max-width: 120px; /* Tamaño máximo de las imágenes */
+  display: block;
+  margin: 0 auto; /* Centrar las imágenes horizontalmente */
 }
-.seccion2 .cardsRight * h4{
+
+.seccion2 .cardsRight h4, 
+.seccion2 .cardsRight h3, 
+.seccion2 .cardsRight div {
+  transition: transform 0.2s ease-in-out;
+}
+
+.seccion2 .cardsRight:hover {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.15);
+}
+
+.seccion2 .cardsRight:hover h4, 
+.seccion2 .cardsRight:hover h3, 
+.seccion2 .cardsRight:hover div {
+  transform: scale(1.1);
+}
+
+.seccion2 .cardsRight * h3, 
+.seccion2 .cardsRight * h4 {
   text-align: center;
-  padding: 0px 5px;
+  padding: 0 5px;
   margin: 0;
 }
 
-.seccion3{
+/* Media query para tamaños de pantalla menores a 1280px */
+@media (max-width: 1279px) {
+  .seccion2 .cardsRight img {
+    max-width: 60px; /* Reducción del 50% del tamaño de las imágenes */
+  }
+
+  .seccion2 .cardsRight h4, 
+  .seccion2 .cardsRight h3 {
+    font-size: 14px; /* Reducir el tamaño del texto */
+  }
+}
+
+/* Media query para tamaños de pantalla menores a 900px */
+@media (max-width: 899px) {
+  .seccion2 .cardsRight img {
+    max-width: 40px; /* Reducción adicional del 33% */
+  }
+
+  .seccion2 .cardsRight h4, 
+  .seccion2 .cardsRight h3 {
+    font-size: 12px; /* Reducción adicional del tamaño del texto */
+  }
+}
+
+
+.seccion3 {
   position: relative;
   width: 100%;
-  height: 700px;
+  height: auto; /* Se ajusta la altura automáticamente en función del contenido */
 }
-.seccion3 h1{
-  font-size: 50px;
+
+.seccion3 h1 {
+  font-size: 4vw; /* Tamaño en porcentaje del viewport */
   text-align: center;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
-.seccion3 .container1{
+
+.seccion3 .container1 {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 0px;
-  padding: 0px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
-.seccion3 .container2{
+
+.seccion3 .container2 {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 0px;
-  padding: 0px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
-.seccion3 .container2 .izq,.seccion3 .container2 .centro,.seccion3 .container2 .der{
+
+.seccion3 .container2 .izq, 
+.seccion3 .container2 .centro, 
+.seccion3 .container2 .der {
   display: grid;
   position: relative;
   grid-template-rows: auto 1fr auto;
 }
 
-.seccion3 * img{
-  position: relative;
-  width: 350px;
-  padding: 0px;
+.seccion3 * img {
+  width: 100%; /* Imagen responsiva al 100% del contenedor */
+  max-width: 100%; /* Tamaño máximo adaptado */
+  padding: 0;
   margin: 0 auto;
   padding-top: 25px;
-  &:hover{
-    transform: scale(1.12);
-		transition: transform 0.2s ease-in-out;
-  }
+  display: block;
+  transition: transform 0.2s ease-in-out;
 }
 
-.seccion3 * h3{
-  padding: 0px 50px;
+.seccion3 * img:hover {
+  transform: scale(1.12);
+}
+
+.seccion3 * h3 {
+  padding: 0 5vw; /* Añadido un margen responsivo basado en el viewport */
   text-align: center;
   margin: 30px 10px;
 }
+
 .seccion3 a {
   background-color: rgb(3, 102, 132);
-  padding: 15px 40px;
+  padding: 15px 4vw; /* Ajusta padding para mejorar responsividad */
   color: whitesmoke;
   font-size: 19px;
-  margin:auto;
+  margin: 0 auto;
   grid-column: 1;
   grid-row: 3;
-  vertical-align: bottom;
-  &:hover{
+  display: block; /* Bloque el enlace para centrarse */
+  text-align: center;
+  width: auto; /* Asegura que el ancho se adapte */
+  
+  &:hover {
     background-color: rgb(7, 159, 205);
-    transition: background-color 0.2s ease-in-out;     
+    transition: background-color 0.2s ease-in-out;
   }
 }
+
 
 
 .footer{
@@ -428,6 +456,7 @@ a{
   margin: 0;
   color:#ddd;
 }
+
 /*----------------------------------------------*/
 
 .topSeccion{
@@ -759,7 +788,7 @@ a{
   box-shadow: inset 0px 0px 80px rgba(0, 0, 0, 0.831);
   display: grid;
 }
-
+/*AAAAAAAAAAAAAAA*/ 
 .seccion1PuntaMita h1{
   text-align: center;
   color: whitesmoke;

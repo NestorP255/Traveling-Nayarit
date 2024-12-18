@@ -7,6 +7,7 @@
     grid-template-columns: repeat(2,1fr);
   }
   .destinosSeccionLugares .right{
+    height: auto;
     position: relative;
     grid-column: 2;
     grid-row: 1;
@@ -35,6 +36,8 @@
   .destinosSeccionLugares .imageReserva2{
     width: 600px;
     height: 350px;
+    /*width: clamp(150px, 35vw, 600px);*/
+    /*height: clamp(175px, 35vw, 350px);*/
     margin: 50px auto;
     background: url('../assets/imagenes/VUELOS.jpg');
     background-size:cover;
@@ -81,7 +84,8 @@
   }
   
   .destinosSeccionLugares p{
-    font-size: 20px;
+    font-size: clamp(14px, 2vw, 20px);
+    /*font-size: 20px;*/
     text-align: justify;
     padding: 0px 50px;
   }

@@ -55,14 +55,13 @@ const Destinos = () => {
           </div>
         </div>
         <div className="left">
-          <div className="imageDestinos1"></div>
+          <img className="imageDestinos1" src="https://magazine.velasresorts.com/wp-content/uploads/2020/07/Sayulita-1.jpg" alt="Sayulita" />
         </div>
       </section>
 
-      {/* Repetición de secciones para los destinos restantes */}
       <section className="destinosSeccionLugares">
         <div className="right">
-          <div className="imageDestinos2"></div>
+          <img className="imageDestinos2" src="https://arquitecturaviva.com/assets/uploads/obras/56840/av_medium__av_273685.webp?h=8f54636a" alt="San Blas" />
         </div>
         <div className="left">
           <h1>San Blas</h1>
@@ -84,13 +83,13 @@ const Destinos = () => {
           </div>
         </div>
         <div className="left">
-          <div className="imageDestinos3"></div>
+          <img className="imageDestinos3" src="https://www.lugaresturisticosenmexico.com/wp-content/uploads/2022/05/Tepic-Nayarit.jpg" alt="Tepic" />
         </div>
       </section>
 
       <section className="destinosSeccionLugares">
         <div className="right">
-          <div className="imageDestinos4"></div>
+          <img className="imageDestinos4" src="https://www.corazondenayarit.com/wp-content/uploads/2019/05/isla-del-coral-guayabitos-nayarit.jpg" alt="Rincón de Guayabitos" />
         </div>
         <div className="left">
           <h1>Rincón de Guayabitos</h1>
@@ -112,13 +111,13 @@ const Destinos = () => {
           </div>
         </div>
         <div className="left">
-          <div className="imageDestinos5"></div>
+          <img className="imageDestinos5" src="https://cdn.forbes.com.mx/2022/02/Isla-de-mexicatitlan-640x360.jpg" alt="Isla de Mexcaltitán" />
         </div>
       </section>
 
       <section className="destinosSeccionLugares">
         <div className="right">
-          <div className="imageDestinos6"></div>
+          <img className="imageDestinos6" src="https://www.mexicodesconocido.com.mx/wp-content/uploads/2010/07/punta-mita-nayarit-mexico-flickr-drosan-rem.jpg" alt="Punta Mita" />
         </div>
         <div className="left">
           <h1>Punta Mita</h1>

@@ -9,7 +9,7 @@ import diamante from '../assets/imagenes/diamante.png';
 
 function PaginaInicio() {
   return (
-    <div style={{ position: 'absolute' }}>
+    <div className='ContenedorGeneral'>
 
       <section className="seccion1">
         <div className="divFondoBlurSection1"></div>
