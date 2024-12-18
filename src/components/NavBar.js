@@ -3,14 +3,14 @@ import logo from '../assets/imagenes/logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900); // Cambiado a <= 900px
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900); 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth <= 900); // Actualizamos el estado con el nuevo breakpoint
+    setIsMobile(window.innerWidth <= 900); 
   };
 
   // Detectar cambio de tamaño de ventana
@@ -66,7 +66,7 @@ const Navbar = () => {
           right: isMobile ? '0' : 'auto',
           backgroundColor: isMobile ? '#036684' : 'transparent',
           display: isMobile && !isMenuOpen ? 'none' : 'flex',
-          flexDirection: isMobile ? 'column' : 'row', // Columnas en móviles, filas en escritorio
+          flexDirection: isMobile ? 'column' : 'row', 
           alignItems: isMobile ? 'center' : 'flex-end',
           padding: isMobile ? '1rem 0' : '0',
           zIndex: 10,
@@ -78,7 +78,7 @@ const Navbar = () => {
             margin: 0,
             padding: 0,
             display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row', // Columnas en móviles, filas en escritorio
+            flexDirection: isMobile ? 'column' : 'row', 
             gap: isMobile ? '1rem' : '2rem',
           }}
         >

@@ -129,29 +129,29 @@ a{
   height: 400px;
   display: grid;
   background-color: rgb(230, 230, 230);
-  padding: 20px; /* Agregado para mejorar el espacio interno */
+  padding: 20px; 
 }
 
 .seccion2 .textLeft {
   text-align: center;
-  padding: 50px 5vw 10px; /* Adjust padding for responsive behavior */
+  padding: 50px 5vw 10px; 
   grid-column: 1;
   grid-row: 1;
   font-weight: lighter;
   font-size: 17px;
-  max-width: 600px; /* Limitar el ancho de la sección de texto */
-  margin: 0 auto; /* Centra el contenido horizontalmente */
+  max-width: 600px; 
+  margin: 0 auto; 
 }
 
 .seccion2 .textLeft a {
   background-color: rgb(3, 102, 132);
-  padding: 15px 4vw; /* Cambiado a tamaño responsivo */
+  padding: 15px 4vw; 
   color: whitesmoke;
   font-size: 19px;
   margin-top: 50px;
-  display: inline-block; /* Asegura el bloque de elementos */
+  display: inline-block; 
   text-align: center;
-  width: auto; /* Asegura que no se reduzca el contenido */
+  width: auto; 
   &:hover {
     background-color: rgb(7, 159, 205);
     transition: background-color 0.2s ease-in-out;
@@ -162,8 +162,8 @@ a{
   grid-column: 2;
   grid-row: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columna flexible y responsiva */
-  gap: 10px; /* Espacio entre las columnas */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 10px; 
 }
 
 .seccion2 .cardsRight .izq, 
@@ -171,16 +171,16 @@ a{
 .seccion2 .cardsRight .der {
   padding: 10px;
   display: grid;
-  gap: 10px; /* Ajustado el padding y gap para las columnas */
+  gap: 10px; 
   text-align: center;
-  align-items: center; /* Centrar verticalmente los contenidos */
+  align-items: center; 
 }
 
 .seccion2 .cardsRight img {
-  width: 100%; /* Imagen responsiva al 100% del contenedor */
-  max-width: 120px; /* Tamaño máximo de las imágenes */
+  width: 100%; 
+  max-width: 120px; 
   display: block;
-  margin: 0 auto; /* Centrar las imágenes horizontalmente */
+  margin: 0 auto; 
 }
 
 .seccion2 .cardsRight h4, 
@@ -206,27 +206,25 @@ a{
   margin: 0;
 }
 
-/* Media query para tamaños de pantalla menores a 1280px */
 @media (max-width: 1279px) {
   .seccion2 .cardsRight img {
-    max-width: 60px; /* Reducción del 50% del tamaño de las imágenes */
+    max-width: 60px; 
   }
 
   .seccion2 .cardsRight h4, 
   .seccion2 .cardsRight h3 {
-    font-size: 14px; /* Reducir el tamaño del texto */
+    font-size: 14px; 
   }
 }
 
-/* Media query para tamaños de pantalla menores a 900px */
 @media (max-width: 899px) {
   .seccion2 .cardsRight img {
-    max-width: 40px; /* Reducción adicional del 33% */
+    max-width: 40px; 
   }
 
   .seccion2 .cardsRight h4, 
   .seccion2 .cardsRight h3 {
-    font-size: 12px; /* Reducción adicional del tamaño del texto */
+    font-size: 12px; 
   }
 }
 
@@ -234,11 +232,11 @@ a{
 .seccion3 {
   position: relative;
   width: 100%;
-  height: auto; /* Se ajusta la altura automáticamente en función del contenido */
+  height: auto; 
 }
 
 .seccion3 h1 {
-  font-size: 4vw; /* Tamaño en porcentaje del viewport */
+  font-size: 4vw;
   text-align: center;
   margin-bottom: 0;
 }
@@ -270,8 +268,8 @@ a{
 }
 
 .seccion3 * img {
-  width: 100%; /* Imagen responsiva al 100% del contenedor */
-  max-width: 100%; /* Tamaño máximo adaptado */
+  width: 100%; 
+  max-width: 100%; 
   padding: 0;
   margin: 0 auto;
   padding-top: 25px;
@@ -284,22 +282,22 @@ a{
 }
 
 .seccion3 * h3 {
-  padding: 0 5vw; /* Añadido un margen responsivo basado en el viewport */
+  padding: 0 5vw; 
   text-align: center;
   margin: 30px 10px;
 }
 
 .seccion3 a {
   background-color: rgb(3, 102, 132);
-  padding: 15px 4vw; /* Ajusta padding para mejorar responsividad */
+  padding: 15px 4vw; 
   color: whitesmoke;
   font-size: 19px;
   margin: 0 auto;
   grid-column: 1;
   grid-row: 3;
-  display: block; /* Bloque el enlace para centrarse */
+  display: block; 
   text-align: center;
-  width: auto; /* Asegura que el ancho se adapte */
+  width: auto; 
   
   &:hover {
     background-color: rgb(7, 159, 205);
