@@ -54,7 +54,7 @@ const PuntaMita = () => {
           Practica deportes acuáticos y descubre las playas desiertas, los hoteles exclusivos y las hermosas islas en el resort frente al mar de Punta de Mita.
           </h3>
           <div className="WidgetClima">
-            <WeatherCard city="" />
+            <WeatherCard city="Punta Mita" />
           </div>
         </section>
   

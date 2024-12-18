@@ -1,6 +1,7 @@
 import React from 'react';
 import '../CSS/estilo.css'; // Para los estilos CSS
 import sayulita from '../assets/imagenes/Calle-sayulita.jpg';
+import Footer from '../components/Footer';
 
 function ContactPage() {
   return (
@@ -17,7 +18,7 @@ function ContactPage() {
             <p style={{ fontSize: 'large' }}>
               Si tienes alguna duda o consulta, no dudes en enviarnos un mensaje. <br /> Estaremos encantados de ayudarte.
             </p>
-            <form action="https://formsubmit.co/jogagarciata@ittepic.edu.mx" method="POST">
+            <form action="https://formsubmit.co/maanlopezbu@ittepic.edu.mx" method="POST">
               <label htmlFor="nombre">Nombre:</label>
               <input type="text" id="nombre" name="nombre" required />
 
@@ -32,12 +33,7 @@ function ContactPage() {
           </div>
         </section>
       </section>
-
-      <footer className="footer">
-        <h2>
-          Copyright © EQUIPO TRAVELING NAYARIT - All Rights Reserved | 2024 Agencia Viajes 'Traveling Nayarit'.
-        </h2>
-      </footer>
+      <Footer/>
     </div>
   );
 }

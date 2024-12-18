@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../CSS/estiloReservacion.css';
+import Footer from '../components/Footer';
 
 function Reservaciones() {
   const [formVisible, setFormVisible] = useState(false);
@@ -244,6 +245,8 @@ function Reservaciones() {
           <button id="confirmarReservacionBtn" className="button-reservacion" onClick={() => window.location.href = 'PaginaPrincipal.php'}>Aceptar</button>
         </div>
       )}
+
+      <Footer/>
     </div>
   );
 }
